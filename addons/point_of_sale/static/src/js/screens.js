@@ -272,8 +272,14 @@ var ScaleScreenWidget = ScreenWidget.extend({
         });
 
         this.$('.next,.buy-product').click(function(){
+<<<<<<< HEAD
             self.order_product();
             self.gui.show_screen(self.next_screen);
+=======
+            self.gui.show_screen(self.next_screen);
+            // add product *after* switching screen to scroll properly
+            self.order_product();
+>>>>>>> odoo/9.0
         });
 
         queue.schedule(function(){
@@ -937,10 +943,19 @@ var ProductScreenWidget = ScreenWidget.extend({
        }
     },
 
+<<<<<<< HEAD
     show: function(){
         this._super();
         this.product_categories_widget.reset_category();
         this.numpad.state.reset();
+=======
+    show: function(reset){
+        this._super();
+        if (reset) {
+            this.product_categories_widget.reset_category();
+            this.numpad.state.reset();
+        }
+>>>>>>> odoo/9.0
     },
 
     close: function(){

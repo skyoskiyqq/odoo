@@ -114,7 +114,11 @@ var Gui = core.Class.extend({
                 this.current_screen.hide();
             }
             this.current_screen = screen;
+<<<<<<< HEAD
             this.current_screen.show();
+=======
+            this.current_screen.show(refresh);
+>>>>>>> odoo/9.0
         }
     },
     

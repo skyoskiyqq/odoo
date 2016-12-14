@@ -441,10 +441,20 @@ class PurchaseOrder(models.Model):
 
     @api.multi
     def action_set_date_planned(self):
+<<<<<<< HEAD
         for order in self:
             #DO NOT FORWARD PORT
             for line in order.order_line:
                 line.update({'date_planned': order.date_planned})
+=======
+        # implementation for 9.0 where PO date_planned is not stored
+        date_planned = self.env.context.get('date_planned')
+        if not date_planned:
+            return
+        for order in self:
+            for line in order.order_line:
+                line.update({'date_planned': date_planned})
+>>>>>>> odoo/9.0
 
 
 class PurchaseOrderLine(models.Model):

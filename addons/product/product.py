@@ -778,7 +778,11 @@ class product_product(osv.osv):
     _description = "Product"
     _inherits = {'product.template': 'product_tmpl_id'}
     _inherit = ['mail.thread']
+<<<<<<< HEAD
     _order = 'default_code,name_template'
+=======
+    _order = 'default_code,name_template,id'
+>>>>>>> odoo/9.0
 
     def _product_price(self, cr, uid, ids, name, arg, context=None):
         plobj = self.pool.get('product.pricelist')
